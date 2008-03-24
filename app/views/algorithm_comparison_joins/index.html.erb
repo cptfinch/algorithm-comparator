@@ -1,0 +1,22 @@
+<h1>Listing algorithm_comparison_joins</h1>
+
+<table>
+  <tr>
+    <th>Algorithm</th>
+    <th>Comparison</th>
+  </tr>
+
+<% for algorithm_comparison_join in @algorithm_comparison_joins %>
+  <tr>
+    <td><%=h algorithm_comparison_join.algorithm_id %></td>
+    <td><%=h algorithm_comparison_join.comparison_id %></td>
+    <td><%= link_to 'Show', algorithm_comparison_join %></td>
+    <td><%= link_to 'Edit', edit_algorithm_comparison_join_path(algorithm_comparison_join) %></td>
+    <td><%= link_to 'Destroy', algorithm_comparison_join, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New algorithm_comparison_join', new_algorithm_comparison_join_path %>

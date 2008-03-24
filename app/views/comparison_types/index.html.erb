@@ -1,0 +1,24 @@
+<h1>Listing comparison_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Algorithm comparison join</th>
+    <th>Tolerance</th>
+  </tr>
+
+<% for comparison_type in @comparison_types %>
+  <tr>
+    <td><%=h comparison_type.name %></td>
+    <td><%=h comparison_type.algorithm_comparison_join_id %></td>
+    <td><%=h comparison_type.tolerance %></td>
+    <td><%= link_to 'Show', comparison_type %></td>
+    <td><%= link_to 'Edit', edit_comparison_type_path(comparison_type) %></td>
+    <td><%= link_to 'Destroy', comparison_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New comparison_type', new_comparison_type_path %>

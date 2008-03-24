@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @comparison_type.name %>
+</p>
+
+<p>
+  <b>Algorithm comparison join:</b>
+  <%=h @comparison_type.algorithm_comparison_join_id %>
+</p>
+
+<p>
+  <b>Tolerance:</b>
+  <%=h @comparison_type.tolerance %>
+</p>
+
+
+<%= link_to 'Edit', edit_comparison_type_path(@comparison_type) %> |
+<%= link_to 'Back', comparison_types_path %>

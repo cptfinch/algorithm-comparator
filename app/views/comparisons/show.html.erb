@@ -1,0 +1,35 @@
+<p>
+  <%=h @comparison.comparison_type.name %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @comparison.comment %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @comparison.user.name %>
+</p>
+
+<p>
+  <b>Patient:</b>
+  <%=h @comparison.patient.name %>
+</p>
+
+<% @comparison.percent_differences.each_with_index do |e,i|  %>
+    <%=h "Beam #{i+1} difference : #{e}  "  %>
+<% end %>
+
+<%= "Maximum difference is #{@comparison.result} \n Therefore plans are #{in_or_out(@comparison)} of tolerance"%>
+
+<p>
+  <b>Created at</b><br />
+
+  <%=h @comparison.created_at.to_date %>
+</p>
+  
+
+<%= link_to 'Edit', edit_comparison_path(@comparison) %> |
+<%= link_to 'Back', comparisons_path %>
+

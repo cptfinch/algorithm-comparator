@@ -1,0 +1,10 @@
+<!-->
+<% fields_for :beams2, beams2 do |beam_fields| %>
+  <%= beams2.number %><%= beam_fields.text_field :value, :index => beams2.number %>
+  <%= beam_fields.hidden_field :number, :index => beams2.number %>
+<% end %>
+-->
+<% fields_for 'comparison[plan2][]', beams2 do |beam_fields| %>
+  <%= beams2.number %><%= beam_fields.text_field :value %>
+  <%= beam_fields.hidden_field :number %>
+<% end %>

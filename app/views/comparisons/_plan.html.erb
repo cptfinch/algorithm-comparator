@@ -1,0 +1,13 @@
+<p>
+  Algorithm 1 : 
+  <%= 
+    collection_select(:plan, :algorithm_id, Algorithm.find(:all), :id, :name, {:prompt => true},:index=>1)
+  %>
+</p>
+
+<p>
+  Algorithm 2 : 
+  <%= 
+    collection_select(:plan, :algorithm_id, Algorithm.find(:all), :id, :name, {:prompt => true},:index=>2)
+  %>
+</p>

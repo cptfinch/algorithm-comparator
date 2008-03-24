@@ -1,0 +1,7 @@
+
+
+<% fields_for 'comparison[plan1][]', beams1 do |beam_fields| %>
+  <%= beams1.number %><%= beam_fields.text_field :value %>
+  <%= beam_fields.hidden_field :number %>
+<% end %>
+

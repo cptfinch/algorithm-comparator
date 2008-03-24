@@ -1,0 +1,17 @@
+<h1>Editing algorithm</h1>
+
+<%= error_messages_for :algorithm %>
+
+<% form_for(@algorithm) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @algorithm %> |
+<%= link_to 'Back', algorithms_path %>

@@ -1,0 +1,22 @@
+<h1>Editing beam</h1>
+
+<%= error_messages_for :beam %>
+
+<% form_for(@beam) do |f| %>
+  <p>
+    <b>Number</b><br />
+    <%= f.text_field :number %>
+  </p>
+
+  <p>
+    <b>Value</b><br />
+    <%= f.text_field :value %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @beam %> |
+<%= link_to 'Back', beams_path %>

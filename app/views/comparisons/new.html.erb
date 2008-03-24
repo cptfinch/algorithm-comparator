@@ -1,0 +1,60 @@
+<h1>New comparison</h1>
+
+<%= error_messages_for :comparison %>
+
+<% form_for(@comparison) do |f| %>
+  
+  <p>
+    Comparison type : 
+    <%= 
+      collection_select(:comparison, :comparison_type_id, @comparison_types, :id, :name, {:prompt => true})
+    %>
+  </p>
+
+  <p>
+    <b>Comment</b><br />
+    <%= f.text_area :comment, :cols => 28, :rows => 5 %>
+  </p>
+  
+  <p>
+    You are : 
+    <%= 
+      collection_select(:comparison, :user_id, @users, :id, :name, {:prompt => true})
+    %>
+  </p>
+  <p>  
+  <% fields_for 'comparison[patient_attributes]', @patient do |patient_fields| %>
+    Patient : <br />
+      name<%= patient_fields.text_field :name %>
+      id number<%= patient_fields.text_field :id_number %>
+  <% end %>
+  </p>
+
+  <%= observe_field "comparison_comparison_type_id", :update => "ajax_me", :with=>"comparison_type_id",:url => {:controller=>"comparisons", :action => "get_algorithm_title" } %>
+
+  <%= observe_field "comparison_comparison_type_id", :update => "ajax_me_again", :with=>"comparison_type_id",:url => {:controller=>"comparisons", :action => "get_algorithm_title_again" } %>
+
+  <div id="ajax_me", name="ajax_me"></div>
+  
+  <%= render :partial => "beams1", :collection => @beams %>
+
+  <br />
+  
+  <div id="ajax_me_again", name="ajax_me_again"></div>
+  
+  <%= render :partial => "beams2", :collection => @beams %>
+
+  <br />
+  
+  
+  <p>
+    <b>Result</b><br />
+    <%= f.text_field :result %>
+  </p>
+  
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', comparisons_path %>

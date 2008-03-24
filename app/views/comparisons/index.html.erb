@@ -1,0 +1,38 @@
+<h1>Listing comparisons</h1>
+
+<table>
+  <tr>
+    <th>Result</th>
+    <th>Comment</th>
+  </tr>
+
+<% for comparison in @comparisons %>
+  <tr>
+    <td><%=h comparison.result %></td>
+    <td><%=h comparison.comment %></td>
+    <td><%= link_to 'Show', comparison %></td>
+    <td><%= link_to 'Edit', edit_comparison_path(comparison) %></td>
+    <td><%= link_to 'Destroy', comparison, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<div id="result_chart" class='chart'>
+  <strong>Text displayed when the user doesn't have Flash. You might want to display a simple table with the population, search engines and visitor without flash would love that.</strong>
+  <p> To see this page properly, you need to upgrade your Flash Player, please visit the Adobe web site</p>
+</div>
+
+<script type="text/javascript">
+  // <![CDATA[    
+  var so = new SWFObject("/amcolumn/amcolumn.swf", "blah_chart", "100%", "380", "6", "#111111");
+  so.addVariable("path", "/amcolumn/");
+  so.addVariable("settings_file", escape("/amcolumn/amcolumn_settings.xml"));
+  so.addVariable("data_file", escape("<%= @result_data_link %>"));
+  so.addVariable("preloader_color", "#009999");
+  so.write("result_chart");
+  // ]]>
+</script>
+
+<%= link_to 'New comparison', new_comparison_path %>

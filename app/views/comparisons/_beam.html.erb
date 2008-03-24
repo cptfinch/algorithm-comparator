@@ -1,0 +1,5 @@
+
+<% fields_for :beam, beam do |beam_fields| %>
+  Beam <%= beam.number %>  : <%= beam_fields.text_field :value, :index => beam.number %>
+  <%= beam_fields.hidden_field :number, :index => beam.number %>
+<% end %>

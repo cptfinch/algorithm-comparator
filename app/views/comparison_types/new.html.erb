@@ -1,0 +1,26 @@
+<h1>New comparison_type</h1>
+
+<%= error_messages_for :comparison_type %>
+
+<% form_for(@comparison_type) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Algorithm comparison join</b><br />
+    <%= f.text_field :algorithm_comparison_join_id %>
+  </p>
+
+  <p>
+    <b>Tolerance</b><br />
+    <%= f.text_field :tolerance %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', comparison_types_path %>

@@ -1,0 +1,22 @@
+<h1>Editing algorithm_comparison_join</h1>
+
+<%= error_messages_for :algorithm_comparison_join %>
+
+<% form_for(@algorithm_comparison_join) do |f| %>
+  <p>
+    <b>Algorithm</b><br />
+    <%= f.text_field :algorithm_id %>
+  </p>
+
+  <p>
+    <b>Comparison</b><br />
+    <%= f.text_field :comparison_id %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @algorithm_comparison_join %> |
+<%= link_to 'Back', algorithm_comparison_joins_path %>

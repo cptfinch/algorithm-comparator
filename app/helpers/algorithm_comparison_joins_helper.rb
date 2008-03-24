@@ -1,0 +1,2 @@
+module AlgorithmComparisonJoinsHelper
+end

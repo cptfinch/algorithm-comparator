@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <%= stylesheet_link_tag 'display' %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'swfobject' %>
+</head>
+<body>
+
+<div id="header">
+  <ul id="nav">
+    <li><%= link_to 'Comparisons', root_path, :rel => 'home' %></li>
+    <li><%= link_to 'Users', users_path %></li>    
+  </ul>
+  <h1><%= link_to 'Algorithms comparator', root_path %></h1>
+</div>
+
+<div id="container">
+
+<div id="content">
+  
+<%= content_tag 'p', h(flash[:notice]), :class => 'notice' if flash[:notice] %>
+<%= content_tag 'p', h(flash[:error]), :class => 'notice error' if flash[:error] %>
+  
+<%= yield %>
+</div>
+
+<br />
+
+</div>
+
+<div id="footer">
+<p class="legal">
+  Not for use yet, under testing.
+</p>
+<p class="disclaim">
+<strong>
+  <% footers=["Algorithms are great!","Which is more accurate, PB or CC?","Fill in my lovely form","Al Gore ithm","cc rulez"] %>
+  <%= footers[rand(footers.size)]%>
+</strong>
+</p>
+<p class="credit">
+  'Powered by'
+  <a href="http://intranet/ncct/">Radiotherapy Physics</a><br />
+</p>
+<br />
+</div>
+</body>
+</html>
